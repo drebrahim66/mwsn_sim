@@ -1,9 +1,1 @@
-runs=50 cores=4 out=results_20260907_200211/
-== E1S
-Traceback (most recent call last):
-  File "/home/azureuser/mwsn_sim/experiments.py", line 143, in <module>
-    main()
-  File "/home/azureuser/mwsn_sim/experiments.py", line 135, in main
-    fn = globals()[name]
-         ~~~~~~~~~^^^^^^
-KeyError: 'E1S'
+runs=50 cores=4 out=results_20260907_200827/
