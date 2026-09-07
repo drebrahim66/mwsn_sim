@@ -51,3 +51,6 @@ runs=100 cores=4 out=results_20260906_032529/
   E3 displace_dist=50 XED        S=0.995 S_b=0.0 P_d=1.0 T_q=107.29 FPR=0.005  [399s]
   E3 displace_dist=50 SIG_RANGE  S=0.9957 S_b=0.155 P_d=1.0 T_q=1481.8925 FPR=0.0037  [520s]
   E3 displace_dist=50 NBHD_TRUST S=0.9989 S_b=0.77 P_d=0.9 T_q= FPR=0.0011  [6257s]
+  E3 displace_dist=50 PROPOSED   S=1.0 S_b=1.0 P_d=0.86 T_q=1730.5 FPR=0.0  [1078s]
+  E3 displace_dist=100 XED        S=0.995 S_b=0.0 P_d=1.0 T_q=109.7 FPR=0.005  [404s]
+  E3 displace_dist=100 SIG_RANGE  S=0.9958 S_b=0.12 P_d=1.0 T_q=1197.78 FPR=0.0038  [517s]
