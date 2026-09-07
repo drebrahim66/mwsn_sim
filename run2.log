@@ -1,1 +1,3 @@
 runs=50 cores=4 out=results_20260907_200827/
+== E1S
+  E1S attack=sem_suppress NBHD_TRUST S=1.0 S_b= P_d=0.1 COV=0.0006 T_q= FPR=0.0001  [3141s]
