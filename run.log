@@ -66,3 +66,8 @@ runs=100 cores=4 out=results_20260906_032529/
   E3 displace_dist=200 PROPOSED   S=1.0 S_b=1.0 P_d=0.995 T_q=1489.2941 FPR=0.0  [1067s]
   E3 displace_dist=300 XED        S=0.995 S_b=0.0 P_d=1.0 T_q=111.62 FPR=0.005  [400s]
   E3 displace_dist=300 SIG_RANGE  S=0.9959 S_b=0.115 P_d=1.0 T_q=1102.85 FPR=0.0038  [520s]
+  E3 displace_dist=300 NBHD_TRUST S=0.9967 S_b=0.34 P_d=1.0 T_q= FPR=0.002  [6151s]
+  E3 displace_dist=300 PROPOSED   S=1.0 S_b=1.0 P_d=0.995 T_q=1523.0909 FPR=0.0  [1097s]
+  saved results_20260906_032529/E3.csv
+== E4
+  E4 replicas_per_victim=1 XED        S=0.995 S_b=0.0 P_d=0.0 T_q=1.0 FPR=0.005  [391s]
