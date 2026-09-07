@@ -16,7 +16,7 @@ import multiprocessing as mp
 from mwsnsim.sim import make_cfg, run
 
 PROTOS = ["XED", "SIG_RANGE", "NBHD_TRUST", "PROPOSED"]
-METRICS = ["P_d", "FNR", "T_d", "T_q", "FPR", "S", "S_b", "M", "C", "E_radio", "E_cpu", "E"]
+METRICS = ["P_d", "FNR", "T_d", "T_q", "COV", "FPR", "S", "S_b", "M", "C", "E_radio", "E_cpu", "E"]
 
 BASE = dict(n_nodes=200, area=200.0, comm_range=32.0, speed=3.0, horizon=2000,
             n_victims=1, replicas_per_victim=4, malicious_fraction=0.5,
@@ -51,7 +51,7 @@ def sweep(pool, name, param, values, runs, protos=PROTOS, base=None, cfg_fn=None
                 row[f"{m}_ci95"] = round(float(1.96 * xs.std() / np.sqrt(len(xs))), 4) if len(xs) > 1 else ""
             rows.append(row)
             print(f"  {name} {param}={v} {p:10s} S={row['S_mean']} S_b={row['S_b_mean']} P_d={row['P_d_mean']} "
-                  f"T_q={row['T_q_mean']} FPR={row['FPR_mean']}  [{time.time()-t0:.0f}s]", flush=True)
+                  f"COV={row['COV_mean']} T_q={row['T_q_mean']} FPR={row['FPR_mean']}  [{time.time()-t0:.0f}s]", flush=True)
     return rows
 
 
@@ -106,6 +106,21 @@ def E8(pool, runs, trace):   # trace-driven mobility: repeat E1/E2/E4
     def g(o, v): o["attack"] = "naive"; o["replicas_per_victim"] = v; return o
     rows += sweep(pool, "E8-E4", "replicas_per_victim", [1, 2, 4, 6], runs, base=b, cfg_fn=g)
     return rows
+
+def E2S(pool, runs):  # suppression vs trend with diurnal-period background (rho controlled)
+    def f(o, v): o["event_grow_time"] = v; o["field_period"] = 86400.0; return o
+    return sweep(pool, "E2S", "event_grow_time", [1200, 600, 300, 150, 75], runs,
+                 protos=["NBHD_TRUST", "PROPOSED"], cfg_fn=f)
+
+def E3S(pool, runs):  # mean-matching adversary: passes a neighbourhood-mean test by construction
+    def f(o, v): o["attack"] = "mean_match"; o["field_period"] = 86400.0; o["replicas_per_victim"] = v; return o
+    return sweep(pool, "E3S", "replicas_per_victim", [2, 4, 6], runs,
+                 protos=["NBHD_TRUST", "PROPOSED"], cfg_fn=f)
+
+def E1S(pool, runs):  # single malicious replica, no siblings: tests the *test*, not id pollution
+    def f(o, v): o["attack"] = v; o["field_period"] = 86400.0; o["replicas_per_victim"] = 1; o["malicious_fraction"] = 1.0; return o
+    return sweep(pool, "E1S", "attack", ["sem_suppress", "sem_displace", "mean_match"], runs,
+                 protos=["NBHD_TRUST", "PROPOSED"], cfg_fn=f)
 
 def E9(pool, runs):   # sensitivity of the proposed protocol
     rows = []

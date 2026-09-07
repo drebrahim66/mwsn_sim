@@ -34,7 +34,7 @@ DEFAULTS = dict(
     E_elec=50e-9, eps_amp=100e-12, msg_bits=24 * 8, cpu_J_per_op=1.35e-9,
     protocol="PROPOSED", mobility="rwp", trace_path=None, comm_range=None,
     exclude_victims_as_observers=True, check_every=1,
-    event_grow_time=300.0,
+    event_grow_time=300.0, field_period=600.0,
 )
 
 
@@ -47,10 +47,11 @@ def run(cfg, seed=0, progress=False):
     cfg = dict(cfg)
     rng = np.random.default_rng(seed)
     area = cfg["area"]
+    per = cfg.get("field_period", 600.0)
     if cfg["field"] == "event":
-        field = EventField(area, rng, horizon=cfg["horizon"], grow_time=cfg["event_grow_time"])
+        field = EventField(area, rng, horizon=cfg["horizon"], grow_time=cfg["event_grow_time"], period=per)
     else:
-        field = SmoothField(area, rng)
+        field = SmoothField(area, rng, period=per)
     cfg["sigma_n"] = cfg["sigma_n_frac"] * field.dynamic_range
     cfg["eps"] = cfg["eps_frac"] * field.dynamic_range
     cfg["sigma_min"] = cfg["sigma_n"]
@@ -126,13 +127,15 @@ def run(cfg, seed=0, progress=False):
     S = surv / nL
     S_b = (sum(1 for b in ben if refused_frac(b) < 0.10) / len(ben)) if ben else float("nan")
 
+    # quarantine coverage: fraction of observers refusing each malicious replica at horizon
+    cov = float(np.mean([sum(1 for i in observers if proto.refuses(i, m)) / max(1, len(observers)) for m in mal])) if mal else float("nan")
     M = float(np.mean([proto.memory_bytes(i) for i in legit]))
     C = proto.messages / n_total
     d_avg = r * 0.66
     E_radio = C * cfg["msg_bits"] * (2 * cfg["E_elec"] + cfg["eps_amp"] * d_avg ** 2)
     E_cpu = proto.cpu_ops / n_total * cfg["cpu_J_per_op"]
     return dict(protocol=cfg["protocol"], attack=cfg["attack"], seed=seed,
-                T_q=T_q, T_q_id=T_q_id, T_d=T_d, P_d=P_d, FNR=1 - P_d, FPR=FPR, S=S, S_b=S_b,
+                T_q=T_q, T_q_id=T_q_id, T_d=T_d, COV=cov, P_d=P_d, FNR=1 - P_d, FPR=FPR, S=S, S_b=S_b,
                 M=M, C=C, E_radio=E_radio, E_cpu=E_cpu, E=E_radio + E_cpu,
                 rho=_rho(cfg, field))
 

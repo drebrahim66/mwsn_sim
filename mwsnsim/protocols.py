@@ -126,6 +126,7 @@ class SigRange(Protocol):
     def _verify_legit(self, i, j, t):
         si = self.net.true_value(i, t) + self.rng.normal(0, self.net.sigma_n)
         sj = self.net.report(j, t)
+        self.net.observe(i, t, sj); self.net.observe(j, t, si)
         self.messages += 2
         self.cpu_ops += 5
         if abs(si - sj) > self.eps:
@@ -281,6 +282,7 @@ class NbhdTrust(Protocol):
         nj = self._node(j)
         si = self.net.true_value(i, t) + self.rng.normal(0, self.net.sigma_n)
         sj = self.net.report(j, t)
+        self.net.observe(i, t, sj); self.net.observe(j, t, si)
         ok = self._nbhd_ok(i, t, si, sj)
         self._update_trust(i, nj.id, ok)
         self.ctx[i].append((t, sj))
@@ -374,6 +376,7 @@ class Proposed(Protocol):
     def _verify_legit(self, i, j, t):
         si = self.net.true_value(i, t) + self.rng.normal(0, self.net.sigma_n)
         sj = self.net.report(j, t)
+        self.net.observe(i, t, sj); self.net.observe(j, t, si)
         pj = self.net.pos[j].copy()
         self.messages += 2
         ok = self.sem_consistent(i, t, si, sj, pj)

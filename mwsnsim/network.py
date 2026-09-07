@@ -58,6 +58,7 @@ class Network:
         self.delay = cfg.get("suppress_delay", 120.0)
         self.disp = cfg.get("displace_dist", 150.0)
         self._disp_dir = rng.uniform(0, 2 * np.pi, size=self.n_total)
+        self.own_ctx = {}
 
     @property
     def pos(self):
@@ -83,6 +84,24 @@ class Network:
             q = p + self.disp * np.array([np.cos(th), np.sin(th)])
             q = np.clip(q, 0, self.cfg["area"])
             return float(self.field.value(q, t)) + self.rng.normal(0, self.sigma_n)
+        if a == "mean_match":
+            # adversary reports the mean of what it has itself recently observed
+            # (its own Es), i.e. a value that passes a neighbourhood-mean test by
+            # construction; falls back to truth if it has no context yet
+            ctx = self.own_ctx.get(pid)
+            if ctx:
+                vals = [v for (_, v) in ctx]
+                return float(np.mean(vals)) + self.rng.normal(0, self.sigma_n)
+            return s
         if a == "none":
             return s
         raise ValueError(a)
+
+    def observe(self, pid, t, value):
+        """Record a value that physical node pid received at time t (used by
+        the mean_match adversary to build its own context)."""
+        d = self.own_ctx.setdefault(pid, [])
+        d.append((t, value))
+        cutoff = t - self.cfg.get("delta", 120.0)
+        while d and d[0][0] < cutoff:
+            d.pop(0)
