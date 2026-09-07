@@ -76,3 +76,4 @@ runs=100 cores=4 out=results_20260906_032529/
   E4 replicas_per_victim=1 PROPOSED   S=1.0 S_b=1.0 P_d=0.0 T_q=1.0 FPR=0.0001  [1043s]
   E4 replicas_per_victim=2 XED        S=0.995 S_b=0.0 P_d=1.0 T_q=135.96 FPR=0.005  [396s]
   E4 replicas_per_victim=2 SIG_RANGE  S=0.9959 S_b=0.18 P_d=1.0 T_q=519.19 FPR=0.0036  [508s]
+  E4 replicas_per_victim=2 NBHD_TRUST S=0.9989 S_b=0.78 P_d=1.0 T_q= FPR=0.0013  [6105s]
