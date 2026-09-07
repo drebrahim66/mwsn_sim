@@ -4,3 +4,4 @@ runs=50 cores=4 out=results_20260907_200827/
   E1S attack=sem_suppress PROPOSED   S=1.0 S_b= P_d=0.18 COV=0.0169 T_q= FPR=0.0  [538s]
   E1S attack=sem_displace NBHD_TRUST S=1.0 S_b= P_d=0.76 COV=0.0202 T_q= FPR=0.0002  [3113s]
   E1S attack=sem_displace PROPOSED   S=1.0 S_b= P_d=1.0 COV=0.9754 T_q=1316.1333 FPR=0.0  [541s]
+  E1S attack=mean_match NBHD_TRUST S=1.0 S_b= P_d=0.16 COV=0.0017 T_q= FPR=0.0001  [3160s]
