@@ -44,3 +44,5 @@ runs=100 cores=4 out=results_20260906_032529/
   E2 event_grow_time=150 PROPOSED   S=1.0 S_b=1.0 P_d=0.93 T_q=1616.1724 FPR=0.0  [1065s]
   E2 event_grow_time=75 XED        S=0.995 S_b=0.0 P_d=1.0 T_q=110.65 FPR=0.005  [401s]
   E2 event_grow_time=75 SIG_RANGE  S=0.9955 S_b=0.085 P_d=1.0 T_q=1134.7273 FPR=0.0043  [513s]
+  E2 event_grow_time=75 NBHD_TRUST S=0.9987 S_b=0.73 P_d=0.89 T_q= FPR=0.0018  [6185s]
+  E2 event_grow_time=75 PROPOSED   S=1.0 S_b=1.0 P_d=0.885 T_q=1659.0256 FPR=0.0  [1093s]
