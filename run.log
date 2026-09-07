@@ -46,3 +46,7 @@ runs=100 cores=4 out=results_20260906_032529/
   E2 event_grow_time=75 SIG_RANGE  S=0.9955 S_b=0.085 P_d=1.0 T_q=1134.7273 FPR=0.0043  [513s]
   E2 event_grow_time=75 NBHD_TRUST S=0.9987 S_b=0.73 P_d=0.89 T_q= FPR=0.0018  [6185s]
   E2 event_grow_time=75 PROPOSED   S=1.0 S_b=1.0 P_d=0.885 T_q=1659.0256 FPR=0.0  [1093s]
+  saved results_20260906_032529/E2.csv
+== E3
+  E3 displace_dist=50 XED        S=0.995 S_b=0.0 P_d=1.0 T_q=107.29 FPR=0.005  [399s]
+  E3 displace_dist=50 SIG_RANGE  S=0.9957 S_b=0.155 P_d=1.0 T_q=1481.8925 FPR=0.0037  [520s]
