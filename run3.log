@@ -2,3 +2,4 @@ runs=50 cores=4 out=results_20260908_175518/
 == E2S
   E2S event_grow_time=1200 NBHD_TRUST S=0.9999 S_b=0.98 P_d=0.4 COV=0.0089 T_q= FPR=0.0001  [3253s]
   E2S event_grow_time=1200 PROPOSED   S=1.0 S_b=1.0 P_d=0.92 COV=0.6409 T_q= FPR=0.0  [566s]
+  E2S event_grow_time=600 NBHD_TRUST S=1.0 S_b=1.0 P_d=0.4 COV=0.0074 T_q= FPR=0.0001  [3242s]
