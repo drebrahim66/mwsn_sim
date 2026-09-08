@@ -22,3 +22,5 @@ runs=50 cores=4 out=results_20260907_200827/
   E2S event_grow_time=600 PROPOSED   S=0.9999 S_b=1.0 P_d=0.13 COV=0.0069 T_q= FPR=0.0001  [562s]
   E2S event_grow_time=300 NBHD_TRUST S=1.0 S_b=1.0 P_d=0.48 COV=0.0075 T_q= FPR=0.0001  [3228s]
   E2S event_grow_time=300 PROPOSED   S=1.0 S_b=1.0 P_d=0.17 COV=0.0155 T_q= FPR=0.0  [568s]
+  E2S event_grow_time=150 NBHD_TRUST S=0.9996 S_b=0.92 P_d=0.48 COV=0.0169 T_q= FPR=0.0002  [3251s]
+  E2S event_grow_time=150 PROPOSED   S=1.0 S_b=1.0 P_d=0.13 COV=0.0327 T_q= FPR=0.0  [566s]
