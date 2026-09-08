@@ -6,3 +6,6 @@ runs=50 cores=4 out=results_20260907_200827/
   E1S attack=sem_displace PROPOSED   S=1.0 S_b= P_d=1.0 COV=0.9754 T_q=1316.1333 FPR=0.0  [541s]
   E1S attack=mean_match NBHD_TRUST S=1.0 S_b= P_d=0.16 COV=0.0017 T_q= FPR=0.0001  [3160s]
   E1S attack=mean_match PROPOSED   S=1.0 S_b= P_d=0.12 COV=0.0006 T_q= FPR=0.0  [572s]
+  saved results_20260907_200827/E1S.csv
+== E3S
+  E3S replicas_per_victim=2 NBHD_TRUST S=1.0 S_b=1.0 P_d=0.38 COV=0.0066 T_q= FPR=0.0002  [3180s]
