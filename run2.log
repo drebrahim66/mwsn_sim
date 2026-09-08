@@ -9,3 +9,4 @@ runs=50 cores=4 out=results_20260907_200827/
   saved results_20260907_200827/E1S.csv
 == E3S
   E3S replicas_per_victim=2 NBHD_TRUST S=1.0 S_b=1.0 P_d=0.38 COV=0.0066 T_q= FPR=0.0002  [3180s]
+  E3S replicas_per_victim=2 PROPOSED   S=1.0 S_b=1.0 P_d=0.26 COV=0.0865 T_q= FPR=0.0  [578s]
