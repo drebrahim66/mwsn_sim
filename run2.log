@@ -25,3 +25,8 @@ runs=50 cores=4 out=results_20260907_200827/
   E2S event_grow_time=150 NBHD_TRUST S=0.9996 S_b=0.92 P_d=0.48 COV=0.0169 T_q= FPR=0.0002  [3251s]
   E2S event_grow_time=150 PROPOSED   S=1.0 S_b=1.0 P_d=0.13 COV=0.0327 T_q= FPR=0.0  [566s]
   E2S event_grow_time=75 NBHD_TRUST S=0.9999 S_b=0.98 P_d=0.6 COV=0.0135 T_q= FPR=0.0002  [3208s]
+  E2S event_grow_time=75 PROPOSED   S=0.9999 S_b=1.0 P_d=0.12 COV=0.0266 T_q= FPR=0.0001  [568s]
+  saved results_20260907_200827/E2S.csv
+== E4
+  E4 replicas_per_victim=1 XED        S=0.995 S_b=0.0 P_d=0.0 COV= T_q=1.0 FPR=0.005  [199s]
+  E4 replicas_per_victim=1 SIG_RANGE  S=0.9953 S_b=0.08 P_d=0.0 COV= T_q=1.0 FPR=0.0041  [258s]
