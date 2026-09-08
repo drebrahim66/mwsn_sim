@@ -58,3 +58,7 @@ runs=50 cores=4 out=results_20260907_200827/
   E5 byzantine_replicas=1 PROPOSED   S=1.0 S_b= P_d=0.98 COV=0.8518 T_q=1492.6333 FPR=0.0  [545s]
   E5 byzantine_replicas=2 SIG_RANGE  S=0.9962 S_b= P_d=1.0 COV=0.9976 T_q=1240.3778 FPR=0.014  [263s]
   E5 byzantine_replicas=2 PROPOSED   S=1.0 S_b= P_d=0.88 COV=0.7743 T_q=1594.1176 FPR=0.0001  [558s]
+  E5 byzantine_replicas=4 SIG_RANGE  S=0.9942 S_b= P_d=1.0 COV=0.9994 T_q=1264.1429 FPR=0.0195  [272s]
+  E5 byzantine_replicas=4 PROPOSED   S=1.0 S_b= P_d=0.91 COV=0.8049 T_q=1667.4 FPR=0.0002  [570s]
+  E5 byzantine_replicas=8 SIG_RANGE  S=0.9882 S_b= P_d=1.0 COV=0.9981 T_q=1428.5238 FPR=0.0276  [283s]
+  E5 byzantine_replicas=8 PROPOSED   S=1.0 S_b= P_d=0.8625 COV=0.6837 T_q= FPR=0.0003  [592s]
