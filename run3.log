@@ -13,3 +13,6 @@ runs=50 cores=4 out=results_20260908_175518/
   saved results_20260908_175518/E2S.csv
 == E9
   E9-kappa kappa=1.5 PROPOSED   S=0.8705 S_b=0.92 P_d=1.0 COV=0.9134 T_q=1722.0 FPR=0.0612  [571s]
+  E9-kappa kappa=2.0 PROPOSED   S=0.9988 S_b=1.0 P_d=1.0 COV=0.9081 T_q=1809.0 FPR=0.0008  [566s]
+  E9-kappa kappa=2.5 PROPOSED   S=1.0 S_b=1.0 P_d=0.95 COV=0.8354 T_q=1792.2 FPR=0.0  [563s]
+  E9-kappa kappa=3.0 PROPOSED   S=1.0 S_b=1.0 P_d=0.85 COV=0.6045 T_q=1886.0 FPR=0.0  [569s]
