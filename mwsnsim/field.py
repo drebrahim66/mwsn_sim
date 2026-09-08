@@ -61,6 +61,11 @@ class EventField(SmoothField):
         d2 = ((p - self.centre) ** 2).sum(-1)
         return v + self.event_amp * g * np.exp(-d2 / (2 * self.radius ** 2))
 
+    def value_no_event(self, p, t):
+        """Field value with the anomaly removed (what a replica denying the
+        event reports)."""
+        return SmoothField.value(self, p, t)
+
     def growth_rate(self):
         """Peak temporal slope of the anomaly (units/s) during growth."""
         return self.event_amp / self.grow_time

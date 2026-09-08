@@ -78,7 +78,10 @@ class Network:
         if a == "naive":
             return s + 3.0 * self.eps
         if a == "sem_suppress":
-            return float(self.field.value(p, max(0.0, t - self.delay))) + self.rng.normal(0, self.sigma_n)
+            # persistent denial of the event: report the background field only
+            f = getattr(self.field, "value_no_event", None)
+            base = float(f(p, t)) if f else float(self.field.value(p, max(0.0, t - self.delay)))
+            return base + self.rng.normal(0, self.sigma_n)
         if a == "sem_displace":
             th = self._disp_dir[pid]
             q = p + self.disp * np.array([np.cos(th), np.sin(th)])

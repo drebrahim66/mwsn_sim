@@ -123,6 +123,7 @@ def E1S(pool, runs):  # single malicious replica, no siblings: tests the *test*,
                  protos=["NBHD_TRUST", "PROPOSED"], cfg_fn=f)
 
 def E9(pool, runs):   # sensitivity of the proposed protocol
+    BASE["field_period"] = 86400.0
     rows = []
     rows += sweep(pool, "E9-kappa", "kappa", [1.5, 2.0, 2.5, 3.0, 4.0], runs, protos=["PROPOSED"])
     rows += sweep(pool, "E9-alpha", "alpha", [0.1, 0.2, 0.3, 0.5, 1.0], runs, protos=["PROPOSED"])
