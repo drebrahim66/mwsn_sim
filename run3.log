@@ -8,3 +8,8 @@ runs=50 cores=4 out=results_20260908_175518/
   E2S event_grow_time=300 PROPOSED   S=1.0 S_b=1.0 P_d=0.95 COV=0.7953 T_q=1812.3333 FPR=0.0  [566s]
   E2S event_grow_time=150 NBHD_TRUST S=1.0 S_b=1.0 P_d=0.58 COV=0.0127 T_q= FPR=0.0002  [3224s]
   E2S event_grow_time=150 PROPOSED   S=0.9999 S_b=1.0 P_d=0.98 COV=0.8597 T_q=1826.0 FPR=0.0001  [563s]
+  E2S event_grow_time=75 NBHD_TRUST S=0.9998 S_b=0.96 P_d=0.64 COV=0.0162 T_q= FPR=0.0003  [3224s]
+  E2S event_grow_time=75 PROPOSED   S=1.0 S_b=1.0 P_d=0.94 COV=0.8062 T_q=1816.8 FPR=0.0  [566s]
+  saved results_20260908_175518/E2S.csv
+== E9
+  E9-kappa kappa=1.5 PROPOSED   S=0.8705 S_b=0.92 P_d=1.0 COV=0.9134 T_q=1722.0 FPR=0.0612  [571s]
