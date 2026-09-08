@@ -62,3 +62,9 @@ runs=50 cores=4 out=results_20260907_200827/
   E5 byzantine_replicas=4 PROPOSED   S=1.0 S_b= P_d=0.91 COV=0.8049 T_q=1667.4 FPR=0.0002  [570s]
   E5 byzantine_replicas=8 SIG_RANGE  S=0.9882 S_b= P_d=1.0 COV=0.9981 T_q=1428.5238 FPR=0.0276  [283s]
   E5 byzantine_replicas=8 PROPOSED   S=1.0 S_b= P_d=0.8625 COV=0.6837 T_q= FPR=0.0003  [592s]
+  E5 byzantine_replicas=16 SIG_RANGE  S=0.9634 S_b= P_d=1.0 COV=0.9904 T_q= FPR=0.0398  [310s]
+  E5 byzantine_replicas=16 PROPOSED   S=1.0 S_b= P_d=0.855 COV=0.6947 T_q= FPR=0.0003  [649s]
+  saved results_20260907_200827/E5.csv
+== E8
+  E8 skipped: no --trace given
+done in 71102s
