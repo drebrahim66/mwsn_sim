@@ -19,3 +19,7 @@ runs=50 cores=4 out=results_20260908_175518/
   E9-kappa kappa=4.0 PROPOSED   S=1.0 S_b=1.0 P_d=0.67 COV=0.3435 T_q= FPR=0.0  [564s]
   E9-alpha alpha=0.1 PROPOSED   S=1.0 S_b=1.0 P_d=0.0 COV=0.0 T_q= FPR=0.0  [565s]
   E9-alpha alpha=0.2 PROPOSED   S=1.0 S_b=1.0 P_d=0.63 COV=0.2632 T_q= FPR=0.0  [567s]
+  E9-alpha alpha=0.3 PROPOSED   S=1.0 S_b=1.0 P_d=0.97 COV=0.8091 T_q=1803.0 FPR=0.0  [565s]
+  E9-alpha alpha=0.5 PROPOSED   S=0.9701 S_b=0.94 P_d=1.0 COV=0.9886 T_q=1645.069 FPR=0.0196  [573s]
+  E9-alpha alpha=1.0 PROPOSED   S=0.6112 S_b=0.65 P_d=1.0 COV=0.7558 T_q= FPR=0.092  [581s]
+  E9-delta delta=30 PROPOSED   S=0.9999 S_b=1.0 P_d=0.94 COV=0.7789 T_q=1901.6667 FPR=0.0002  [542s]
