@@ -26,3 +26,6 @@ runs=50 cores=4 out=results_20260908_175518/
   E9-delta delta=60 PROPOSED   S=1.0 S_b=0.99 P_d=0.99 COV=0.8674 T_q=1919.3333 FPR=0.0  [557s]
   E9-delta delta=120 PROPOSED   S=1.0 S_b=1.0 P_d=0.98 COV=0.8548 T_q=1744.5 FPR=0.0  [565s]
   E9-delta delta=240 PROPOSED   S=1.0 S_b=1.0 P_d=0.95 COV=0.7632 T_q=1929.0 FPR=0.0  [573s]
+  E9-delta delta=480 PROPOSED   S=1.0 S_b=1.0 P_d=0.97 COV=0.8047 T_q=1787.4 FPR=0.0  [582s]
+  saved results_20260908_175518/E9.csv
+done in 27487s
